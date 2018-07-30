@@ -1,0 +1,10 @@
+{
+  "name": "cbpp_colorgen",
+  "version": "1.0.0",
+  "description": "makes bins in HSL color space",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Kasprak"
+}
