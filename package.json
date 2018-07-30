@@ -8,6 +8,7 @@
   },
   "author": "Nick Kasprak",
   "dependencies": {
+    "hex-rgb": "^3.0.0",
     "hsl-to-rgb-for-reals": "^1.1.0",
     "rgb-to-hsl": "0.0.3"
   }

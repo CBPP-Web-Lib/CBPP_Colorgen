@@ -1,11 +1,21 @@
 var HSLtoRGB = require("hsl-to-rgb-for-reals");
 var RGBtoHSL = require("rgb-to-hsl");
+var HexToRGB = require("hex-rgb");
 
 /*var HSLtoRGB = RGBtoHSL = function(r, g, b) {
   return [r, g, b];
 };*/
 
 module.exports = function(start, end, n) {
+  var rgb;
+  if (typeof(start)==="string") {
+    rgb = HexToRGB(start);
+    start = [rgb.red, rgb.green, rgb.blue];
+  }
+  if (typeof(end)==="string") {
+    rgb = HexToRGB(end);
+    end = [rgb.red, rgb.green, rgb.blue];
+  }
   var p;
   var startHSL = noPercent(RGBtoHSL.apply(null, start));
   var endHSL = noPercent(RGBtoHSL.apply(null, end));
