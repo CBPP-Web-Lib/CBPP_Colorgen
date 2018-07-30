@@ -1,6 +1,7 @@
 var HSLtoRGB = require("hsl-to-rgb-for-reals");
 var RGBtoHSL = require("rgb-to-hsl");
 var HexToRGB = require("hex-rgb");
+var RGBToHex = require("rgb-hex");
 
 /*var HSLtoRGB = RGBtoHSL = function(r, g, b) {
   return [r, g, b];
@@ -8,13 +9,16 @@ var HexToRGB = require("hex-rgb");
 
 module.exports = function(start, end, n) {
   var rgb;
+  var is_hex = false;
   if (typeof(start)==="string") {
     rgb = HexToRGB(start);
     start = [rgb.red, rgb.green, rgb.blue];
+    is_hex = true;
   }
   if (typeof(end)==="string") {
     rgb = HexToRGB(end);
     end = [rgb.red, rgb.green, rgb.blue];
+    is_hex = true;
   }
   var p;
   var startHSL = noPercent(RGBtoHSL.apply(null, start));
@@ -33,7 +37,12 @@ module.exports = function(start, end, n) {
       c[j] = (endHSL[j]-startHSL[j])*p + startHSL[j];
     }
     c[0] = (c[0]+360)%360;
-    r.push("rgb("+HSLtoRGB.apply(null, c).join(",") + ")");
+    rgb = HSLtoRGB.apply(null, c);
+    if (is_hex) {
+      r.push("#" + RGBToHex(rgb[0], rgb[1], rgb[2]));
+    } else {
+      r.push("rgb("+rgb.join(",") + ")");
+    }
     test.push(c);
   }
   return r;
