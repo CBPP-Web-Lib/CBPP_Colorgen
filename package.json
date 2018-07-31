@@ -5,10 +5,12 @@
   "main": "main_trans.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall":"postinstall.js"
+    "postinstall": "postinstall.js"
   },
   "author": "Nick Kasprak",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
     "fs": "0.0.1-security",
