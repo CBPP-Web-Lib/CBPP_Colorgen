@@ -1,7 +1,7 @@
-var HSLtoRGB = require("hsl-to-rgb-for-reals");
-var RGBtoHSL = require("rgb-to-hsl");
-var HexToRGB = require("hex-rgb");
-var RGBToHex = require("rgb-hex");
+const HSLtoRGB = require("hsl-to-rgb-for-reals");
+const RGBtoHSL = require("rgb-to-hsl");
+const HexToRGB = require("hex-rgb");
+const RGBToHex = require("rgb-hex");
 
 /*var HSLtoRGB = RGBtoHSL = function(r, g, b) {
   return [r, g, b];

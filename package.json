@@ -2,22 +2,15 @@
   "name": "cbpp_colorgen",
   "version": "1.0.0",
   "description": "makes bins in HSL color space",
-  "main": "main_dist.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node postinstall.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nick Kasprak",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babelify": "^8.0.0",
-    "browserify": "^16.2.2",
-    "fs": "0.0.1-security",
     "hex-rgb": "^3.0.0",
     "hsl-to-rgb-for-reals": "^1.1.0",
     "rgb-hex": "^2.1.0",
-    "rgb-to-hsl": "0.0.3",
-    "uglify-js": "^3.4.6"
-  }
+    "rgb-to-hsl": "0.0.3"
+  },
+  "author": "Nick Kasprak"
 }
