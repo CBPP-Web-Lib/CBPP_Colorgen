@@ -4,7 +4,8 @@
   "description": "makes bins in HSL color space",
   "main": "main_trans.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall":"poinstinstall.js"
   },
   "author": "Nick Kasprak",
   "dependencies": {
