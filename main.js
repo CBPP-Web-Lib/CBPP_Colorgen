@@ -7,8 +7,11 @@ const RGBToHex = require("rgb-hex");
   return [r, g, b];
 };*/
 
-module.exports = function(start, end, n) {
+module.exports = function(start, end, n, curve) {
   var rgb;
+  if (typeof(curve)==="undefined") {
+    curve = function(n) {return n;};
+  }
   var is_hex = false;
   if (typeof(start)==="string") {
     rgb = HexToRGB(start);
@@ -31,7 +34,7 @@ module.exports = function(start, end, n) {
   var test = [];
   var r = [];
   for (var i = 0; i<n; i++) {
-    p = i/(n-1);
+    p = curve(i/(n-1));
     var c = [];
     for (var j = 0; j<3;j++) {
       c[j] = (endHSL[j]-startHSL[j])*p + startHSL[j];
